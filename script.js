@@ -1,15 +1,3 @@
-document.querySelector(".btn button").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Show elements when the game starts
-    document.querySelector(".previousGuess").style.display = "block";
-    document.querySelector(".output").style.display = "block";
-    document.querySelector(".restart").style.display = "flex"; // Flex for centering
-
-    // Expand the container
-    document.querySelector(".container").classList.add("expanded");
-});
-
 let randomNumber = 1 + Math.floor(Math.random() * 99);
 let guesses = [];
 let attempts = 10;
@@ -21,6 +9,17 @@ const suggestion = document.body.querySelector(".output #suggestion");
 const submitButton = document.body.querySelector(".btn button");
 const restart = document.body.querySelector(".restart button");
 
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Show elements when the game starts
+    document.querySelector(".previousGuess").style.display = "block";
+    document.querySelector(".output").style.display = "block";
+    document.querySelector(".restart").style.display = "flex"; // Flex for centering
+
+    // Expand the container
+    document.querySelector(".container").classList.add("expanded");
+});
 
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
